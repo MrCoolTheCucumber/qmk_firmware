@@ -11,22 +11,37 @@ enum layers {
 };
 
 // --- COMBOS ---
+
+// J + K = Enter
 const uint16_t PROGMEM combo_enter_seq[] = {KC_J,    KC_K,    COMBO_END};
-const uint16_t PROGMEM combo_tab_seq[]   = {KC_Q,    KC_W,    COMBO_END};
-const uint16_t PROGMEM combo_c_bs_seq[]  = {KC_C,    KC_V,    COMBO_END};
-const uint16_t PROGMEM combo_quot_seq[]  = {KC_COMM, KC_DOT,  COMBO_END};
-const uint16_t PROGMEM combo_c_sf_seq[]  = {KC_Z,    KC_X,    COMBO_END};
-const uint16_t PROGMEM combo_bs_seq[]    = {KC_D,    KC_F,    COMBO_END};
-const uint16_t PROGMEM combo_a_sf_seq[]  = {KC_D,    KC_F,    COMBO_END};
+// R + T = Tab
+const uint16_t PROGMEM combo_tab_seq[]   = {KC_R,    KC_T,    COMBO_END};
+// Y + U = Ctrl + Backspace
+const uint16_t PROGMEM combo_c_bs_seq[]  = {KC_Y,    KC_U,    COMBO_END};
+// H + J = Backspace
+const uint16_t PROGMEM combo_bs_seq[]    = {KC_H,    KC_J,    COMBO_END};
+
+// Y + H = <-- Left Arrow
+const uint16_t PROGMEM combo_left_arrow_seq[] = {KC_Y,    KC_H,    COMBO_END};
+// U + J = --> Right Arrow
+const uint16_t PROGMEM combo_right_arrow_seq[] = {KC_U,    KC_J,    COMBO_END};
+
+
+// ctrl shift + alt shift: Dont think I need these as I have one tap/one shot mods 
+// const uint16_t PROGMEM combo_c_sf_seq[]  = {KC_Z,    KC_X,    COMBO_END};
+// const uint16_t PROGMEM combo_a_sf_seq[]  = {KC_D,    KC_F,    COMBO_END};
 
 combo_t key_combos[] = {
     COMBO(combo_enter_seq, KC_ENT),
     COMBO(combo_tab_seq,   KC_TAB),
     COMBO(combo_c_bs_seq,  LCTL(KC_BSPC)),
-    COMBO(combo_quot_seq,  KC_QUOT),
-    COMBO(combo_c_sf_seq,  LCTL(KC_LSFT)),
     COMBO(combo_bs_seq,    KC_BSPC),
-    COMBO(combo_a_sf_seq,  LALT(KC_LSFT)),
+
+    COMBO(combo_left_arrow_seq, KC_LEFT),
+    COMBO(combo_right_arrow_seq, KC_RGHT),
+
+    // COMBO(combo_c_sf_seq,  LCTL(KC_LSFT)),
+    // COMBO(combo_a_sf_seq,  LALT(KC_LSFT)),
 };
 
 // --- KEYMAP ---
@@ -40,8 +55,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_A,     KC_S,     KC_D,     KC_F,     KC_G,        KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,
     //  Z         X         C         V         B            N         M         ,         .         /
         KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,        KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,
-    //                      LCTL      LALT      LSFT         SPC       SYM       GUI
-                            KC_LCTL,  KC_LALT,  KC_LSFT,     KC_SPC,   TO(_SYM), KC_LGUI
+    //                      LALT      LCTL      LSFT         SPC       SYM       GUI
+                            KC_LALT,  KC_LCTL,  KC_LSFT,     KC_SPC,   TO(_SYM), KC_LGUI
     ),
 
     /* Layer 1: Symbols */
@@ -52,8 +67,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,   KC_EQL,   KC_PLUS,  KC_MINS,  KC_UNDS,     KC_LCBR,  KC_LPRN,  KC_RPRN,  KC_RCBR,  KC_ENT,
     //  FUN       `         ~         |         \            [         "         '         ]         NAV
         TO(_FUN), KC_GRV,   KC_TILD,  KC_PIPE,  KC_BSLS,     KC_LBRC,  KC_DQUO,  KC_QUOT,  KC_RBRC,  TO(_NAV),
-    //                      LCTL      DEF       LSFT         SPC       NUM       RALT
-                            KC_LCTL,  TO(_DEF), KC_LSFT,     KC_SPC,   TO(_NUM), KC_RALT
+    //                      LCTL      DEF       LSFT         SPC       NUM       LCTL
+                            KC_LCTL,  TO(_DEF), KC_LSFT,     KC_SPC,   TO(_NUM), KC_LCTL
     ),
 
     /* Layer 2: Navigation */
@@ -64,8 +79,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,   MS_LEFT,  MS_DOWN,  MS_RGHT,  KC_TRNS,     KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  KC_ENT,
     //  FUN       LWIN      MB3       TRANS     TRANS        TRANS     TRANS     TRANS     TRANS     NAV
         TO(_FUN), KC_LWIN,  MS_BTN3,  KC_TRNS,  KC_TRNS,     KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  TO(_NAV),
-    //                      LCTL      DEF       LSFT         SPC       NUM       RALT
-                            KC_LCTL,  TO(_DEF), KC_LSFT,     KC_SPC,   TO(_NUM), KC_RALT
+    //                      LCTL      DEF       LSFT         SPC       NUM       LCTL
+                            KC_LCTL,  TO(_DEF), KC_LSFT,     KC_SPC,   TO(_NUM), KC_LCTL
     ),
 
     /* Layer 3: Numbers */

@@ -1,0 +1,175 @@
+# https://keymap-drawer.streamlit.app/
+#
+# Inspired by https://github.com/ShamalLakshan/36-QWERTY-Tap-Switch-Keymap
+
+layout:
+  qmk_keyboard: corne_rotated
+  layout_name: LAYOUT_split_3x5_3
+layers:
+  DEF:
+    - [Q, W, E, R, T, Y, U, I, O, P]
+    - [A, S, D, F, G, H, J, K, L, ";"]
+    - [Z, X, C, V, B, N, M, ",", ., /]
+    - { t: LCtrl }
+    - { t: LAlt }
+    - { t: LShift }
+    - { t: Space }
+    - { t: SYM, type: held }
+    - { t: LGUI }
+  SYM:
+    - [Esc, "@", "#", "$", "%", "^", "&", "*", "!", BSpace]
+    - [Tab, "=", "+", "-", "_", "{", "(", ")", "}", Enter]
+    - [
+        { t: FUN, type: held },
+        "`",
+        "~",
+        "|",
+        "\\",
+        "[",
+        '"',
+        "'",
+        "]",
+        { t: NAV, type: held },
+      ]
+    - { t: LCtrl }
+    - { t: DEF, type: held }
+    - { t: LShift }
+    - { t: Space }
+    - { t: NUM, type: held }
+    - { t: RAlt }
+  NAV:
+    - [Esc, Btn1, MsUp, Btn2, { type: trans }, WhL, WhD, WhU, WhR, BSpace]
+    - [
+        Tab,
+        MsLeft,
+        MsDown,
+        MsRight,
+        { type: trans },
+        Left,
+        Down,
+        Up,
+        Right,
+        Enter,
+      ]
+    - [
+        { t: FUN, type: held },
+        LWin,
+        Btn3,
+        { type: trans },
+        { type: trans },
+        { type: trans },
+        { type: trans },
+        { type: trans },
+        { type: trans },
+        { t: NAV, type: held },
+      ]
+    - { t: LCtrl }
+    - { t: DEF, type: held }
+    - { t: LShift }
+    - { t: Space }
+    - { t: NUM, type: held }
+    - { t: RAlt }
+  NUM:
+    - [Esc, CapWrd, Scroll, NumLk, PgUp, Home, "7", "8", "9", BSpace]
+    - [S(Tab), S(X), S(C), S(V), PgDn, End, "4", "5", "6", Enter]
+    - [
+        { t: FUN, type: held },
+        Ins,
+        Undo,
+        Again,
+        Del,
+        "0",
+        "1",
+        "2",
+        "3",
+        { t: NAV, type: held },
+      ]
+    - { t: RCtrl }
+    - { t: DEF, type: held }
+    - { type: trans }
+    - { t: LShift }
+    - { t: Space }
+    - { t: SYM, type: held }
+  FUN:
+    - [
+        Esc,
+        BrDn,
+        { type: trans },
+        BrUp,
+        { type: trans },
+        F9,
+        F10,
+        F11,
+        F12,
+        BSpace,
+      ]
+    - [Tab, Prev, Play, Next, { type: trans }, F5, F6, F7, F8, Enter]
+    - [
+        { t: FUN, type: held },
+        { type: trans },
+        Mute,
+        { type: trans },
+        { t: SET, type: held },
+        F1,
+        F2,
+        F3,
+        F4,
+        { t: NAV, type: held },
+      ]
+    - { t: LCtrl }
+    - { t: DEF, type: held }
+    - { type: trans }
+    - { t: LShift }
+    - { t: Space }
+    - { t: NUM, type: held }
+  SET:
+    - [
+        Esc,
+        { type: none },
+        { type: none },
+        { type: none },
+        { type: none },
+        { type: trans },
+        { type: trans },
+        { type: trans },
+        { type: trans },
+        BSpace,
+      ]
+    - [
+        Tab,
+        { type: none },
+        { type: none },
+        { type: none },
+        EE_CLR,
+        { type: trans },
+        Boot,
+        { type: none },
+        Reset,
+        Enter,
+      ]
+    - [
+        { t: FUN, type: held },
+        { type: none },
+        { type: none },
+        { type: none },
+        { type: trans },
+        { type: trans },
+        { type: trans },
+        { type: trans },
+        { type: trans },
+        { t: NAV, type: held },
+      ]
+    - { t: LCtrl }
+    - { t: DEF, type: held }
+    - { type: trans }
+    - { t: LShift }
+    - { t: Space }
+    - { t: NUM, type: held }
+combos:
+  - { p: [16, 17], k: Enter, l: [DEF] }
+  - { p: [0, 1], k: Tab, l: [DEF] }
+  - { p: [22, 23], k: C(BS), l: [DEF] }
+  - { p: [27, 28], k: "'", l: [DEF] }
+  - { p: [20, 21], k: C(Sft), l: [DEF] }
+  - { p: [12, 13], k: BSpace, l: [DEF] }
+  - { p: [12, 13], k: A(Sft), l: [DEF] }
