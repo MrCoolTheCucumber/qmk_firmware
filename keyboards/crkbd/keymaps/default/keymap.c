@@ -1,5 +1,9 @@
 #include QMK_KEYBOARD_H
 
+// Inspirations:
+// - https://keymapdb.com/keymaps/ShamalLakshan/
+// - https://keymapdb.com/keymaps/AlaaSaadAbdo/
+
 // Layer Enum
 enum layers {
     _DEF = 0,
@@ -25,6 +29,8 @@ const uint16_t PROGMEM combo_bs_seq[]    = {KC_H,    KC_J,    COMBO_END};
 const uint16_t PROGMEM combo_left_arrow_seq[] = {KC_Y,    KC_H,    COMBO_END};
 // U + J = --> Right Arrow
 const uint16_t PROGMEM combo_right_arrow_seq[] = {KC_U,    KC_J,    COMBO_END};
+// T + G = Escape
+const uint16_t PROGMEM combo_esc_seq[]  = {KC_T,    KC_G,    COMBO_END};
 
 
 // ctrl shift + alt shift: Dont think I need these as I have one tap/one shot mods 

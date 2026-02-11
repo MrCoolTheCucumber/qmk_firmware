@@ -85,6 +85,7 @@ layers:
 combos:
   - { p: [16, 17], k: Enter, l: [DEF] }
   - { p: [3, 4], k: Tab, l: [DEF] }
+  - { p: [4, 14], k: ESC, l: [DEF] }
   - { p: [5, 6], k: C(BS), l: [DEF] }
   - { p: [15, 16], k: BSpace, l: [DEF] }
   - { p: [5, 15], k: Left, l: [DEF] }
