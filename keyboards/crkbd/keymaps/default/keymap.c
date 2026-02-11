@@ -46,6 +46,8 @@ combo_t key_combos[] = {
     COMBO(combo_left_arrow_seq, KC_LEFT),
     COMBO(combo_right_arrow_seq, KC_RGHT),
 
+    COMBO(combo_esc_seq,  KC_ESC),
+
     // COMBO(combo_c_sf_seq,  LCTL(KC_LSFT)),
     // COMBO(combo_a_sf_seq,  LALT(KC_LSFT)),
 };
